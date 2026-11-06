@@ -1,0 +1,58 @@
+{
+  "name": "dsh-notify",
+  "version": "0.1.0",
+  "description": "DSH task-completion notifications: raises a native system notification when a Session finishes while DeepSeek Harness is not the focused app; click it to open that Session.",
+  "type": "module",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "chenyichen",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChenYichener/dsh-notify.git"
+  },
+  "homepage": "https://github.com/ChenYichener/dsh-notify#readme",
+  "bugs": {
+    "url": "https://github.com/ChenYichener/dsh-notify/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "notifications",
+    "desktop-notification",
+    "task-completion"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "README.zh.md",
+    "LICENSE",
+    "scripts/smoke-notify.mjs"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  }
+}

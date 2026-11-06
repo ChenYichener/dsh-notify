@@ -1,0 +1,8 @@
+# dsh-notify bundle patch.
+#
+# One row carries both halves: the Node half is inert (the watcher only needs
+# the browser), while the browser half (dsh.client manifest) observes Session
+# running edges and raises a system notification when DSH is not in front.
+- insert:
+    - id: dsh-notify
+      name: 'dsh-notify'

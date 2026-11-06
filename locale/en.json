@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Task Completion Notifications",
+    "description": "Pops a native system notification when a DeepSeek Harness task finishes while the app is not in front; click it to open that Session."
+  }
+}
